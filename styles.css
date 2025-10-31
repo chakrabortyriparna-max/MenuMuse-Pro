@@ -1,0 +1,81 @@
+.blob-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+}
+
+.blob1 {
+    width: 400px;
+    height: 400px;
+    background-color: #004E41; /* Deep Emerald */
+    animation: move1 20s infinite alternate;
+}
+
+.blob2 {
+    width: 300px;
+    height: 300px;
+    background-color: #C4FF47; /* Electric Lime */
+    animation: move2 25s infinite alternate;
+}
+
+.blob3 {
+    width: 250px;
+    height: 250px;
+    background-color: #FFD6E0; /* Soft Blush */
+    animation: move3 15s infinite alternate;
+}
+
+@keyframes move1 {
+    from { transform: translate(0, 0) scale(1); }
+    to { transform: translate(20vw, 30vh) scale(1.2); }
+}
+
+@keyframes move2 {
+    from { transform: translate(80vw, 10vh) scale(1); }
+    to { transform: translate(50vw, 70vh) scale(0.9); }
+}
+
+@keyframes move3 {
+    from { transform: translate(10vw, 70vh) scale(1); }
+    to { transform: translate(70vw, 20vh) scale(1.1); }
+}
+
+.masonry-grid {
+  --gap: 1.5rem;
+  column-count: 1;
+  column-gap: var(--gap);
+}
+
+@media (min-width: 640px) {
+  .masonry-grid {
+    column-count: 2;
+  }
+}
+@media (min-width: 1024px) {
+  .masonry-grid {
+    column-count: 3;
+  }
+}
+
+.masonry-item {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: var(--gap);
+  break-inside: avoid;
+}
+
+/* Base body styles */
+body {
+  overflow-x: hidden;
+}
